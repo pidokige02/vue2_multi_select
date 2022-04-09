@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import multi_select from '../views/multi_select.vue'
 
 Vue.use(VueRouter)
 
@@ -17,7 +18,12 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path: '/multi',
+    name: 'Multi',
+    component: multi_select
+  },
 ]
 
 const router = new VueRouter({
